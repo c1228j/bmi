@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %} bmiの計算 {% endblock %}
+
+{% block content %}
+<div>
+    <h3>あなたのBMIを計算します。</h3>
+    <form method="post">
+        {% csrf_token %}
+
+        {% for field in form %}
+            {{ field.label_tag }} 
+            {{ field }} <br>
+        {% endfor %}
+
+        <button type="submit">送信</button>
+    </form>
+
+    {% if your_bmi %}
+        <p>あなたのbmiは「<strong>{{ your_bmi }}</strong>」</p>
+    {% endif %}
+    
+</div>
+{% endblock %}
