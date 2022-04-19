@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %} base {% endblock %}</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{% url 'bmi_app:index' %}">ホーム</a></li>
+        </ul>
+    </nav>
+
+    {% block content %}
+        <p>現在コンテンツがありません。</p>
+    {% endblock %}
+
+    <footer>
+        <p>Copyright &copy; CJ Django Study</p>
+    </footer>
+</body>
+</html>
