@@ -5,5 +5,5 @@ from . import views
 app_name = 'bmi_app'
 
 urlpatterns = [
-    
+    path('', views.IndexView.as_view(), name='index'),
 ]
