@@ -17,7 +17,7 @@
     </form>
 
     {% if your_bmi %}
-        <p>あなたのbmiは「<strong>{{ your_bmi }}</strong>」</p>
+        <p>あなたのbmiは「<strong>{{ your_bmi | floatformat:2 }}</strong>」です。</p>
     {% endif %}
     
 </div>
