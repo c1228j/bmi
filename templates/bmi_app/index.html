@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block title %} bmiの計算 {% endblock %}
 
 {% block content %}
-<div>
+<div class="bmi_background">
     <h3>あなたのBMIを計算します。</h3>
     <form method="post">
         {% csrf_token %}
