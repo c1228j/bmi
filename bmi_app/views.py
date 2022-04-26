@@ -20,7 +20,20 @@ class IndexView(generic.FormView):
 
         bmi = weight / (height ** 2)
 
-        context = self.get_context_data(your_bmi=bmi)
+        message = ''
+
+        if bmi < 18.5:
+            message = 'やせ'
+        elif bmi >= 18.5 or bmi < 25.5:
+            message = "標準"
+        elif bmi >= 25:
+            message = "肥満"
+        elif bmi >= 30:
+            message = "高度肥満"
+        else:
+            message = "エラー"
+
+        context = self.get_context_data(your_bmi=bmi, message=message)
 
         return self.render_to_response(context)
 
