@@ -18,14 +18,12 @@
 
         {% endfor %}
 
-
-
-
         <button type="submit">送信</button>
     </form>
 
-    {% if your_bmi %}
+    {% if your_bmi and message %}
         <p>あなたのbmiは「<strong>{{ your_bmi | floatformat:2 }}</strong>」です。</p>
+        <p>あなたのBMIの目安は「<strong>{{ message }}</strong>」です。</p>
     {% endif %}
     
 </div>
